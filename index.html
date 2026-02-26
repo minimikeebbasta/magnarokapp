@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Magnarok – Stella dei Valori</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#0b0b10">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header>
+  <div class="brand">
+    <div class="logo">✦</div>
+    <div>
+      <div class="title">Magnarok</div>
+      <div class="subtitle">Stella dei Valori – mini web app</div>
+    </div>
+  </div>
+  <div class="right">
+    <button id="installBtn" class="ghost" hidden>Installa</button>
+  </div>
+</header>
+
+<main>
+  <section class="card">
+    <h2>Sessione</h2>
+    <div class="grid2">
+      <div>
+        <label>Codice sessione (condividilo tra i giocatori)</label>
+        <input id="sessionId" placeholder="es. viaggio-2026" />
+        <div class="hint">Tutti devono usare lo <b>stesso</b> codice per vedere gli aggiornamenti in tempo reale.</div>
+      </div>
+      <div>
+        <label>Modalità</label>
+        <select id="mode">
+          <option value="firebase">Realtime (Firebase)</option>
+          <option value="local">Solo locale (offline)</option>
+        </select>
+        <div class="hint">Se non configuri Firebase, scegli “Solo locale”.</div>
+      </div>
+    </div>
+    <div class="row">
+      <button id="connectBtn">Connetti</button>
+      <span id="status" class="status">Non connesso</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Giocatori</h2>
+    <div class="row">
+      <button id="addPlayerBtn">+ Aggiungi giocatore</button>
+      <button id="exportBtn" class="ghost">Esporta JSON</button>
+      <label class="ghost file">
+        Importa JSON <input type="file" id="importFile" accept="application/json" />
+      </label>
+    </div>
+
+    <div id="players" class="players"></div>
+  </section>
+
+  <section class="card">
+    <h2>Legenda rapida</h2>
+    <ul class="small">
+      <li>I valori sono aggiornabili con <b>+ / −</b>. Minimo 0.</li>
+      <li>“Visione” è una sezione libera: scrivi/aggiorna le emozioni che <i>tu</i> attribuisci agli altri.</li>
+      <li>“Cartella clinica” traccia ferite/disabilità. È testo libero, aggiornabile in ogni momento.</li>
+      <li>La logica Stella (multipli di 2/3, bonus/malus, soglie) la gestisce il Master: l’app è un <b>tracker live</b>.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>Config Firebase</h2>
+    <p class="small">
+      Per avere aggiornamenti in tempo reale tra telefoni, devi inserire la configurazione Firebase in <code>app.js</code>.
+      Vedi <code>README.md</code> nel pacchetto.
+    </p>
+  </section>
+</main>
+
+<footer>
+  <span class="small">Offline-ready (PWA). Realtime opzionale via Firebase.</span>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
