@@ -1,0 +1,9 @@
+{
+  "name": "Magnarok \u2013 Stella dei Valori",
+  "short_name": "Magnarok",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#0b0b10",
+  "theme_color": "#0b0b10",
+  "icons": []
+}
